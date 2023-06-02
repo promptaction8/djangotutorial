@@ -1,0 +1,16 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('posts/<int:post_id>/', views.post_detail, name='post_detail'),
+]
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def post_detail(request, post_id):
+    # post_id를 사용하여 게시물의 세부 정보를 가져와서 처리하는 로직을 작성합니다.
+    # ...
+
+    return HttpResponse(f"게시물 ID: {post_id}")
